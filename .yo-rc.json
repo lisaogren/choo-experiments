@@ -1,0 +1,20 @@
+{
+  "generator-fountain-choo": {
+    "version": "1.0.0-rc1",
+    "props": {
+      "resolved": "/home/rascarlito/www/fountain/generator-fountain-choo/generators/app/index.js",
+      "namespace": "fountain-choo:app",
+      "argv": {
+        "remain": [],
+        "cooked": [],
+        "original": []
+      },
+      "framework": "choo",
+      "modules": "webpack",
+      "css": "scss",
+      "js": "babel",
+      "ci": [],
+      "sample": "techs"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "es2015"
+      ]
+    },
+    "production": {
+      "presets": [
+        "es2015",
+        [
+          "es2015",
+          {
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  },
+  "presets": [
+    "es2015"
+  ]
+}
