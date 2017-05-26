@@ -1,19 +1,19 @@
 module.exports = function (shipit) {
   require('shipit-deploy')(shipit)
 
-  const workspace = '/tmp/shipit/admin.pauline.et.carlogren.com'
+  const workspace = '/tmp/shipit/choo-base'
 
   shipit.initConfig({
     default: {
       workspace,
-      deployTo: '/home/rascarlito/www/admin.pauline.et.carlogren.com',
-      repositoryUrl: 'git@gitlab.devfor.beer:mariage/quiz-d-amour-admin.git',
+      deployTo: '/home/rascarlito/www/choo-base',
+      repositoryUrl: 'git@github.com:RasCarlito/choo-base.git',
       keepReleases: 3,
       ignores: ['.git'],
       dirToCopy: `${workspace}/dist`
     },
     production: {
-      servers: 'rascarlito@carlogren.com'
+      servers: 'user@server'
     }
   })
 
