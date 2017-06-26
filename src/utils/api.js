@@ -5,8 +5,7 @@ const urlComposer = require('url-composer')
 const Promise = require('bluebird')
 
 const config = {
-  // host: 'http://localhost:1337',
-  host: 'https://api.pauline.et.carlogren.com',
+  host: 'http://localhost:1337',
   services: {
     getAnswers: {
       path: '/answers',
@@ -47,15 +46,12 @@ function request (serviceName, options = {}) {
       json: true,
       body: data,
       headers: {
-        'x-requested-with': 'XMLHttpRequest',
-        'x-is-admin': 'iamsuperadminz'
+        'x-requested-with': 'XMLHttpRequest'
       }
     }
 
     http[service.method || 'get'](url, options, (err, res, body) => {
-      if (err) {
-        return reject(err)
-      }
+      if (err) return reject(err)
 
       resolve(body)
     })
