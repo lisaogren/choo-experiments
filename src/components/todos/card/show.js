@@ -3,11 +3,7 @@ import html from 'choo/html'
 export default (emit, todo) => {
   return html`
     <div class="card todos-show">
-      <div class="card-content">
-        <p class="title">
-          ${todo.content}
-        </p>
-      </div>
+      ${printContent(todo.content)}
       <div class="card-footer">
         <button class="card-footer-item button is-white" onclick=${edit}>
           Edit
@@ -25,5 +21,24 @@ export default (emit, todo) => {
 
   function remove () {
     emit('todos:delete', todo)
+  }
+
+  function printContent (content) {
+    if (!content) {
+      return html`
+        <div class="card-content todos-empty">
+          <i class="fa fa-frown-o"></i>
+          <span>It's empty...</span>
+        </div>
+      `
+    }
+
+    return html`
+      <div class="card-content">
+        <p class="title">
+          <em>${todo.content}</em>
+        </p>
+      </div>
+    `
   }
 }

@@ -7,6 +7,19 @@
 
     .card-content {
       flex: 1;
+
+      &.todos-empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ccc;
+        font-size: 1.3rem;
+
+        i {
+          font-size: 2rem
+        }
+      }
     }
 
     .card-footer {
