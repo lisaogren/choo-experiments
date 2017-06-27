@@ -1,5 +1,7 @@
 import html from 'choo/html'
 
+import emoji from 'utils/emoji'
+
 export default (emit, todo) => {
   return html`
     <div class="card todos-show">
@@ -33,10 +35,14 @@ export default (emit, todo) => {
       `
     }
 
+    const em = html`<em></em>`
+
+    em.innerHTML = emoji.shortnameToImage(todo.content)
+
     return html`
       <div class="card-content">
         <p class="title">
-          <em>${todo.content}</em>
+          ${em}
         </p>
       </div>
     `
