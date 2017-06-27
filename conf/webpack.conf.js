@@ -9,12 +9,12 @@ module.exports = {
   module: {
     rules: [
       // pre loaders
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'standard-loader'
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   enforce: 'pre',
+      //   loader: 'standard-loader'
+      // },
       // loaders
       {
         test: /.json$/,
@@ -34,9 +34,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [
-          'babel-loader'
-        ]
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [['es2015', { modules: false }]],
+            plugins: ['syntax-dynamic-import']
+          }
+        }]
       },
       {
         test: /.html$/,
@@ -50,6 +54,12 @@ module.exports = {
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader'
       }
+    ]
+  },
+  resolve: {
+    modules: [
+      'node_modules',
+      'src'
     ]
   },
   plugins: [
@@ -70,7 +80,6 @@ module.exports = {
     filename: 'index.js'
   },
   entry: [
-    'font-awesome-loader',
     `./${conf.path.src('index')}`
   ]
 }

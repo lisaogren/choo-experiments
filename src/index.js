@@ -1,11 +1,15 @@
-require('./index.scss')
+import 'font-awesome/scss/font-awesome.scss'
+import 'index.scss'
 
-const choo = require('choo')
+import choo from 'choo'
+import main from 'pages/main'
+
+import todosStore from 'components/todos/store'
 
 const app = choo()
 
-app.route('/', require('./pages/main'))
+app.route('/', main)
 
-// app.use(require('./services/users'))
+app.use(todosStore)
 
 app.mount('body')

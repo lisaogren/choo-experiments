@@ -1,8 +1,8 @@
-const forEach = require('lodash/forEach')
-const partial = require('lodash/partial')
-const http = require('xhr')
-const urlComposer = require('url-composer')
-const Promise = require('bluebird')
+import forEach from 'lodash/forEach'
+import partial from 'lodash/partial'
+import http from 'xhr'
+import urlComposer from 'url-composer'
+import Promise from 'bluebird'
 
 const config = {
   host: 'http://localhost:1337',
@@ -66,4 +66,4 @@ forEach(config.services, (service, name) => {
   api[name] = partial(request, name)
 })
 
-module.exports = api
+export default api
