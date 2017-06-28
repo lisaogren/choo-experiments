@@ -1,7 +1,13 @@
 @import '~bulma/bulma.sass';
 
-.hero-head .nav-left img {
-  margin-right: 0.5rem;
+.hero {
+  .hero-head .nav-left img {
+    margin-right: 0.5rem;
+  }
+
+  .hero-body .subtitle .emojione {
+    zoom: 0.35;
+  }
 }
 
 .welcome .emojione {

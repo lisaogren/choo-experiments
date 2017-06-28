@@ -11,8 +11,10 @@ export default (state, emit) => {
       </div>
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title">Welcome to Choo Choo</h1>
-          <h2 class="subtitle">The sturdy frontend framework</h2>
+          <h1 class="title">Welcome to Choo Experiments</h1>
+          <h2 class="subtitle">
+            A little collection of my Choo Choo experiments, enjoy! <span class="emojione emojione-1f609" title=":wink:">😉</span>
+          </h2>
         </div>
       </div>
       <div class="hero-foot">

@@ -8,10 +8,18 @@ export default (state, emit) => {
       ${header(state, emit)}
       <section class="section welcome">
         <div class="container content">
-          <h1>Choo Choo experiments</h1>
+          <h1>Ohai!</h1>
           <hr>
           <p>
-            A little collection of my Choo Choo experiments, enjoy! <span class="emojione emojione-1f609" title=":wink:">😉</span>
+            Here you can find some of my experiments using the awesome Choo Choo framework and some other
+            very interesting open-source libraries.<br>
+            I do this for fun and at the same time maybe come up with some reusable Choo components.
+          </p>
+          <p>
+            <em>
+              This site is not affiliated to the <a href="https://choo.io">Choo framework</a>
+              or his creator <a href="https://github.com/yoshuawuyts">Yoshua Wuyts</a>.
+            </em>
           </p>
         </div>
       </section>
