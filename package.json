@@ -8,6 +8,7 @@
     "font-awesome-loader": "^1.0.2",
     "form-serialize": "^0.7.2",
     "lodash": "^4.17.4",
+    "megamark": "^3.3.0",
     "url-composer": "^1.13.0",
     "xhr": "^2.3.3"
   },

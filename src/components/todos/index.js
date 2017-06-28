@@ -1,7 +1,8 @@
-import forEach from 'lodash/forEach'
+import last from 'lodash/last'
 
 import html from 'choo/html'
 
+import columnize from 'utils/columnizer'
 import card from './card'
 
 import './index.scss'
@@ -9,19 +10,8 @@ import './index.scss'
 export default (state, emit) => {
   const todos = state.todos.list
 
-  const groups = []
-  let group = []
-
-  groups.push(group)
-
-  forEach(todos, (todo, i) => {
-    if (i % 4 === 0 && i !== 0) {
-      group = []
-      groups.push(group)
-    }
-
-    group.push(todo)
-  })
+  const groups = columnize({ list: todos })
+  const group = last(groups)
 
   const addTodo = { type: 'add' }
 

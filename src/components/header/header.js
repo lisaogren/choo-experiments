@@ -1,6 +1,6 @@
 import html from 'choo/html'
 
-export default (state, emit) => {
+export default () => {
   return html`
     <header class="nav">
       <div class="container">
