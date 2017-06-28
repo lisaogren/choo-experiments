@@ -15,6 +15,12 @@ export default (state, emit) => {
 
   forEach(dominus('pre', result), el => hljs.highlightBlock(el))
 
+  const textarea = html`
+    <textarea id="editor-textarea" class="textarea" placeholder="Enter some markdown! :)" onkeyup=${change}>${state.editor.content}</textarea>
+  `
+
+  textarea.isSameNode = (target) => (target && target.nodeName && target.id === 'editor-textarea')
+
   return html`
     <div class="editor-component">
       <section class="section">
@@ -22,7 +28,7 @@ export default (state, emit) => {
           <h1 class="title">Editor</h1>
           <hr>
           <form>
-            <textarea class="textarea" placeholder="Enter some markdown! :)" onkeyup=${change}>${state.editor.content}</textarea>
+            ${textarea}
           </form>
         </div>
       </section>
