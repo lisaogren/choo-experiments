@@ -3,6 +3,7 @@ const conf = require('./gulp.conf')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const pkg = require('../package.json');
 const autoprefixer = require('autoprefixer')
@@ -10,13 +11,6 @@ const autoprefixer = require('autoprefixer')
 module.exports = {
   module: {
     rules: [
-      // pre loaders
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'standard-loader'
-      },
       // loaders
       {
         test: /.json$/,
@@ -36,9 +30,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [
-          'babel-loader'
-        ]
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [['es2015', { modules: false }]],
+            plugins: ['syntax-dynamic-import']
+          }
+        }]
       },
       {
         test: /.html$/,
@@ -54,6 +52,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    modules: [
+      'node_modules',
+      'src'
+    ]
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
@@ -63,7 +67,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJSPlugin({
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
     new webpack.LoaderOptionsPlugin({
@@ -79,7 +83,6 @@ module.exports = {
     filename: '[name]-[hash].js'
   },
   entry: [
-    'font-awesome-loader',
     `./${conf.path.src('index')}`
   ]
 }
