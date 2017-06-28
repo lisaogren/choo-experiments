@@ -20,8 +20,8 @@ export default (state, emit) => {
 
   return html`
     <section class="section todos-component">
-      <div class="container content">
-        <h1>Todos</h1>
+      <div class="container">
+        <h1 class="title">Todos</h1>
         <hr>
         ${groups.map(group => row(group))}
       </div>
