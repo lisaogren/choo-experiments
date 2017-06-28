@@ -6,14 +6,14 @@ module.exports = function (shipit) {
   shipit.initConfig({
     default: {
       workspace,
-      deployTo: '/home/rascarlito/www/choo-base',
+      deployTo: '/home/rascarlito/www/choo-experiments',
       repositoryUrl: 'git@github.com:RasCarlito/choo-base.git',
       keepReleases: 3,
       ignores: ['.git'],
       dirToCopy: `${workspace}/dist`
     },
     production: {
-      servers: 'user@server'
+      servers: 'rascarlito@carlogren.com'
     }
   })
 
