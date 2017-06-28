@@ -6,7 +6,7 @@ export default (state, emit) => {
   return html`
     <body>
       ${header(state, emit)}
-      <section class="section">
+      <section class="section welcome">
         <div class="container content">
           <h1>Choo Choo experiments</h1>
           <hr>

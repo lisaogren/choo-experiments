@@ -1,12 +1,42 @@
 import html from 'choo/html'
 
+import forEach from 'lodash/forEach'
+
+import dominus from 'dominus'
+import megamark from 'megamark'
+import hljs from 'highlight.js'
+
+import 'highlight.js/styles/solarized_dark.css'
+
 export default (state, emit) => {
+  const result = html`<div class="content result"></div>`
+
+  result.innerHTML = megamark(state.editor.content)
+
+  forEach(dominus('pre', result), el => hljs.highlightBlock(el))
+
   return html`
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Editor</h1>
-        <hr>
-      </div>
-    </section>
+    <div class="editor-component">
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Editor</h1>
+          <hr>
+          <form>
+            <textarea class="textarea" placeholder="Enter some markdown! :)" onkeyup=${change}>${state.editor.content}</textarea>
+          </form>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          ${result}
+        </div>
+      </section>
+    </div>
   `
+
+  function change (e) {
+    const value = e.currentTarget.value
+
+    emit('editor:change', value)
+  }
 }

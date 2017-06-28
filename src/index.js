@@ -10,6 +10,7 @@ import editor from 'pages/editor'
 import appService from 'services/app'
 
 import todosStore from 'components/todos/store'
+import editorStore from 'components/editor/store'
 
 const app = choo()
 
@@ -19,5 +20,6 @@ app.route('/editor', editor)
 
 app.use(appService)
 app.use(todosStore)
+app.use(editorStore)
 
 app.mount('body')
