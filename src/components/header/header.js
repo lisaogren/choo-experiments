@@ -10,6 +10,16 @@ export default () => {
             <span>Choo Experiments</span>
           </a>
         </div>
+        <div class="nav-right">
+          <span class="nav-item">
+            <a href="https://github.com/RasCarlito/choo-base">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>View on Github</span>
+            </a>
+          </span>
+        </div>
       </div>
     </header>
   `
