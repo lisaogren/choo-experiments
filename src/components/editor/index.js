@@ -19,7 +19,7 @@ export default (state, emit) => {
     <textarea id="editor-textarea" class="textarea" placeholder="Enter some markdown! :)" onkeyup=${change}>${state.editor.content}</textarea>
   `
 
-  textarea.isSameNode = (target) => (target && target.nodeName && target.id === 'editor-textarea')
+  textarea.isSameNode = (target) => (target && target.id === 'editor-textarea')
 
   return html`
     <div class="editor-component">
