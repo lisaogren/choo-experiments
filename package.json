@@ -1,4 +1,15 @@
 {
+  "name": "choo-experiments",
+  "description": "A little collection of my Choo Choo experiments",
+  "author": "Carl OGREN <rascarlito@gmail.com>",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "homepage": "http://choo-experiments.carlogren.com",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RasCarlito/choo-experiments.git"
+  },
   "dependencies": {
     "bluebird": "^3.4.7",
     "bulma": "^0.4.0",

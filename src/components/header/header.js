@@ -12,7 +12,7 @@ export default () => {
         </div>
         <div class="nav-right">
           <span class="nav-item">
-            <a href="https://github.com/RasCarlito/choo-base">
+            <a href="https://github.com/RasCarlito/choo-experiments">
               <span class="icon">
                 <i class="fa fa-github"></i>
               </span>

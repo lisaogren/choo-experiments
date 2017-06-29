@@ -1,13 +1,13 @@
 module.exports = function (shipit) {
   require('shipit-deploy')(shipit)
 
-  const workspace = '/tmp/shipit/choo-base'
+  const workspace = '/tmp/shipit/choo-experiments'
 
   shipit.initConfig({
     default: {
       workspace,
       deployTo: '/home/rascarlito/www/choo-experiments',
-      repositoryUrl: 'git@github.com:RasCarlito/choo-base.git',
+      repositoryUrl: 'git@github.com:RasCarlito/choo-experiments.git',
       keepReleases: 3,
       ignores: ['.git'],
       dirToCopy: `${workspace}/dist`
