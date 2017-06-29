@@ -2,22 +2,49 @@ import find from 'lodash/find'
 import forEach from 'lodash/forEach'
 import urlComposer from 'url-composer'
 
+import pages from 'pages'
+
 const routes = [
   {
     path: '/',
-    title: 'Welcome'
+    title: 'Welcome',
+    page: 'main'
   },
   {
     path: '/todos',
-    title: 'Todos'
+    title: 'Todos',
+    page: 'todos'
   },
   {
     path: '/editor',
-    title: 'Editor'
+    title: 'Markdown Editor',
+    page: 'editor'
   }
 ]
 
-export default (state, emitter) => {
+const appService = {
+  init (app) {
+    this.app = app
+
+    this.setupRouting()
+
+    this.app.use(middleware)
+  },
+
+  setupRouting () {
+    forEach(routes, route => {
+      this.app.route(route.path, pages[route.page])
+    })
+  }
+}
+
+export default appService
+
+// ------------------
+// Helpers
+// ------------------
+
+function middleware (state, emitter) {
   state.routes = {
     list: routes
   }

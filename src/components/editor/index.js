@@ -25,7 +25,7 @@ export default (state, emit) => {
     <div class="editor-component">
       <section class="section">
         <div class="container">
-          <h1 class="title">Editor</h1>
+          <h1 class="title">Markdown Editor</h1>
           <hr>
           <form>
             ${textarea}
